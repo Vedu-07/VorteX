@@ -1,10 +1,12 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
+import { useAuth,SignInButton } from "@clerk/clerk-react";
 import MagicButton from "./_components/MagicButton";
 import { Spotlight } from "./_components/Spotlight";
 import { TextGenerateEffect } from "./_components/TextGenerateEffect";
-
+import { Spinner } from "@/components/ui/spinner";
+import Link from "next/link";
 const Hero = () => {
+  const { isSignedIn, isLoaded } = useAuth();
   return (
     <div className="pb-20 pt-36">
 
@@ -47,14 +49,43 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-8 text-sm md:text-lg lg:text-2xl">
           Command the Chaos. Own Your Workflow.
           </p>
-
-          <a href="#about">
+          {/* Sample Magic Button */}
+          {/* <a href="#about">
             <MagicButton
               title="Explore Vortex"
               icon={<FaLocationArrow />}
               position="right"
             />
-          </a>
+           </a> */}
+
+      {!isLoaded && <Spinner />} {/* Show Spinner while loading */}
+
+      {!isSignedIn && isLoaded && (
+        <SignInButton mode="modal">
+          <button>
+            <MagicButton
+              title="Explore VorteX"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+            </button>
+        </SignInButton>
+      )}
+
+      {isSignedIn && isLoaded && (
+        <>
+          <Link href="/documents">
+
+            <MagicButton
+              title="Enter VorteX"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+
+          </Link>
+          
+        </>
+      )}
         </div>
       </div>
     </div>

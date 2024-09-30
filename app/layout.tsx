@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "../components/providers/provider";
 import { Inter } from "next/font/google";
+import { ConvexClientProvider } from "@/components/providers/convex-provider";
 const inter = Inter({ subsets: ["latin"] });
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,6 +46,7 @@ export default function RootLayout({
       <link rel="icon" href="/jsm-logo.png" sizes="any" />
     </head>
     <body className={inter.className}>
+      <ConvexClientProvider>
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
@@ -53,6 +55,7 @@ export default function RootLayout({
       >
         {children}
       </ThemeProvider>
+      </ConvexClientProvider>
     </body>
   </html>
   );
