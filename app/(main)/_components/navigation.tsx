@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { ElementRef, useRef, useState, useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import  UserItem  from "./userItem";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 786px)");
@@ -16,6 +18,8 @@ const Navigation = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
+
+const documents = useQuery(api.documents.get);
   // Making Sidebar Disappear When Switched To Mobile
 
   useEffect(() => {
@@ -125,7 +129,9 @@ const Navigation = () => {
         </div>
 
         <div className="mt-4">
-          <p>Documents</p>
+          {documents?.map((document) => (
+            <p key={document._id}>{document.title}</p>
+          ) )}
         </div>
         <div
           onMouseDown={handleMouseDown}
