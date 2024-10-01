@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "../components/providers/theme-provider";
 import { Inter } from "next/font/google";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import {Toaster} from "sonner";
+
 const inter = Inter({ subsets: ["latin"] });
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -53,6 +55,7 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
       >
+        <Toaster position="bottom-center" />
         {children}
       </ThemeProvider>
       </ConvexClientProvider>
