@@ -39,7 +39,7 @@ const DocumentsPage = () => {
       alt="Empty"
       className="hidden dark:block"
       />
-      <h2 className="text-lg font-medium">
+      <h2 className="text-lg font-medium" >
         Welcome {user?.firstName}
       </h2>
       <Button onClick={onCreate}>

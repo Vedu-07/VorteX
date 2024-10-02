@@ -1,13 +1,20 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ChevronsLeft, MenuIcon } from "lucide-react";
+import { ChevronsLeft,
+         MenuIcon,
+         PlusCircle,
+         Search, 
+         Settings } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ElementRef, useRef, useState, useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import  UserItem  from "./userItem";
-import { useQuery } from "convex/react";
+import UserItem from "./userItem";
+import { useQuery,useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import Item from "./items";
+import { toast } from "sonner";
+
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 786px)");
@@ -18,8 +25,8 @@ const Navigation = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-
-const documents = useQuery(api.documents.get);
+  const documents = useQuery(api.documents.get);
+  const create= useMutation(api.documents.create);
   // Making Sidebar Disappear When Switched To Mobile
 
   useEffect(() => {
@@ -30,7 +37,7 @@ const documents = useQuery(api.documents.get);
     }
   }, [isMobile]);
 
-//   For Pathname Change
+  //   For Pathname Change
 
   useEffect(() => {
     if (isMobile) {
@@ -103,6 +110,18 @@ const documents = useQuery(api.documents.get);
     }
   };
 
+
+//   Creating The Document
+  const handleCreate = () => {
+    const promise = create({title : "Untitled"});
+
+    toast.promise(promise, {
+        loading: "Creating A New Note...",
+        success: "New Note Created !",
+        error: "Failed To Create A New Note."
+    });
+  }
+ 
   return (
     <>
       <aside
@@ -125,13 +144,29 @@ const documents = useQuery(api.documents.get);
         </div>
 
         <div>
-          <UserItem/>
+          <UserItem />
+
+          {/* For Search */}
+          <Item label="Search"
+          icon={Search}
+          isSearch
+          onClick={() => {}} />
+        
+          {/* For Settings */}
+          <Item label="Settings"
+          icon={Settings}
+          onClick={() => {}} />
+
+          {/* For Creating Documents */}
+          <Item onClick={handleCreate} 
+          label="New Page" 
+          icon={PlusCircle} />
         </div>
 
         <div className="mt-4">
           {documents?.map((document) => (
             <p key={document._id}>{document.title}</p>
-          ) )}
+          ))}
         </div>
         <div
           onMouseDown={handleMouseDown}

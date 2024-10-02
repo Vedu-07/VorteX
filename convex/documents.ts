@@ -4,7 +4,7 @@ import { mutation, query } from "./_generated/server";
 import { Doc, Id } from "./_generated/dataModel";
 import { error } from "console";
 
-// For Creating New Document ctx = context
+// For Creating New Document (ctx = context)
 export const create = mutation({
     args: {
       title: v.string(),
