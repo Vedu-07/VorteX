@@ -9,7 +9,7 @@ import { Doc, Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 
-import  Item  from "./items";
+import Item  from "./items";
 
 interface DocumentListProps {
   parentDocumentId?: Id<"documents">;
@@ -31,15 +31,15 @@ const DocumentList = ({
       [documentId]: !prevExpanded[documentId]
     }));
   };
-// For Fetching Data POn Side Bar
+
   const documents = useQuery(api.documents.getSidebar, {
     parentDocument: parentDocumentId
   });
-//   For Redirecting
+
   const onRedirect = (documentId: string) => {
     router.push(`/documents/${documentId}`);
   };
-// For Showing Skeleton
+
   if (documents === undefined) {
     return (
       <>
