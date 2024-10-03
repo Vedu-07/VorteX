@@ -58,7 +58,7 @@ const Navigation = () => {
     }
   }, [pathname, isMobile]);
 
-  // This Function For Handling Resizing For Sidebar And Navbar To Adjust Dynamically
+  // This Function For Handling Resizing For Sidebar And Navigation Bar To Adjust Dynamically
 
   const handleMouseDown = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
