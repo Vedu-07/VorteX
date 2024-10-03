@@ -3,7 +3,7 @@ import { useAuth,SignInButton } from "@clerk/clerk-react";
 import MagicButton from "./_components/MagicButton";
 import { Spotlight } from "./_components/Spotlight";
 import { TextGenerateEffect } from "./_components/TextGenerateEffect";
-import { Spinner } from "@/components/ui/spinner";
+import { Spinner } from "@/components/spinner";
 import Link from "next/link";
 const Hero = () => {
   const { isSignedIn, isLoaded } = useAuth();

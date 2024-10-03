@@ -24,6 +24,8 @@ import {
 } from "@/components/ui/popover"
 import TrashBox from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
+
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 786px)");
@@ -35,6 +37,7 @@ const Navigation = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const search = useSearch();
+  const settings = useSettings();
 
   const create= useMutation(api.documents.create);
   // Making Sidebar Disappear When Switched To Mobile
@@ -165,7 +168,7 @@ const Navigation = () => {
           {/* For Settings */}
           <Item label="Settings"
           icon={Settings}
-          onClick={() => {}} />
+          onClick={settings.onOpen} />
 
           {/* For Creating Documents */}
           <Item onClick={handleCreate} 

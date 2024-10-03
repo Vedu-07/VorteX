@@ -114,7 +114,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useAuth } from "@clerk/clerk-react";  // Import Clerk's useAuth
 import { SignInButton, UserButton } from "@clerk/clerk-react";
-import { Spinner } from "@/components/ui/spinner";
+import { Spinner } from "@/components/spinner";
 
 export const FloatingNav = ({
   navItems,

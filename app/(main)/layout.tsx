@@ -1,10 +1,11 @@
 "use client"
 
-import { Spinner } from "@/components/ui/spinner";
+import { Spinner } from "@/components/spinner";
 import { useAuth } from "@clerk/clerk-react";
 import { redirect } from "next/navigation";
 import  Navigation from "./_components/navigation";
-import { SearchCommand } from "@/components/ui/search-command";
+import { SearchCommand } from "@/components/search-command";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 const MainLayout = ({
   children
@@ -31,6 +32,7 @@ const MainLayout = ({
       <Navigation />
        <main className="flex-1 h-full overflow-y-auto">
          <SearchCommand />
+         <ModalProvider/>
          {children}
        </main>
     </div>
