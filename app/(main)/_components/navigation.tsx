@@ -23,6 +23,7 @@ import {
     PopoverContent
 } from "@/components/ui/popover"
 import TrashBox from "./trash-box";
+import { useSearch } from "@/hooks/use-search";
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 786px)");
@@ -33,6 +34,7 @@ const Navigation = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
+  const search = useSearch();
 
   const create= useMutation(api.documents.create);
   // Making Sidebar Disappear When Switched To Mobile
@@ -158,7 +160,7 @@ const Navigation = () => {
           <Item label="Search"
           icon={Search}
           isSearch
-          onClick={() => {}} />
+          onClick={search.onOpen} />
         
           {/* For Settings */}
           <Item label="Settings"

@@ -4,7 +4,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { useAuth } from "@clerk/clerk-react";
 import { redirect } from "next/navigation";
 import  Navigation from "./_components/navigation";
-// import { SearchCommand } from "@/components/search-command";
+import { SearchCommand } from "@/components/ui/search-command";
 
 const MainLayout = ({
   children
@@ -30,7 +30,7 @@ const MainLayout = ({
     <div className="h-full flex dark:bg-[#1F1F1F]">
       <Navigation />
        <main className="flex-1 h-full overflow-y-auto">
-         {/* <SearchCommand /> */}
+         <SearchCommand />
          {children}
        </main>
     </div>
