@@ -8,8 +8,8 @@ import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 
 import { Title } from "./title";
-// import { Banner } from "./banner";
-// import { Menu } from "./menu";
+import  Banner  from "./banner";
+import  Menu  from "./menu";
 // import { Publish } from "./publish";
 
 interface NavbarProps {
@@ -32,7 +32,7 @@ const Navbar = ({
       <nav className="bg-background dark:bg-[#1F1F1F] px-3 py-2 w-full flex items-center justify-between">
         <Title.Skeleton />
         <div className="flex items-center gap-x-2">
-          {/* <Menu.Skeleton /> */}
+          <Menu.Skeleton /> 
         </div>
       </nav>
     )
@@ -56,13 +56,17 @@ const Navbar = ({
           <Title initialData={document} />
           <div className="flex items-center gap-x-2">
             {/* <Publish initialData={document} /> */}
-            {/* <Menu documentId={document._id} /> */}
+            {/* Only show the Menu if the document is not archived */}
+            {!document.isArchived ? (
+              <Menu documentId={document._id} />
+            ) : (
+              <span className="text-muted-foreground text-sm hover:bg-primary/5  dark:text-white cursor-pointer p-1 px-2 h-auto rounded-md">Trash</span>)}
           </div>
         </div>
       </nav>
-      {/* {document.isArchived && (
-        // <Banner documentId={document._id} />
-      )} */}
+      {document.isArchived && (
+        <Banner documentId={document._id} />
+      )}
     </>
   )
 }

@@ -22,6 +22,7 @@ export const Title = ({
   const [title, setTitle] = useState(initialData.title || "Untitled");
   const [isEditing, setIsEditing] = useState(false);
 
+  
   const enableInput = () => {
     setTitle(initialData.title);
     setIsEditing(true);
