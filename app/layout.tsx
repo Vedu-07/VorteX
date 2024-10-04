@@ -5,7 +5,7 @@ import { ThemeProvider } from "../components/providers/theme-provider";
 import { Inter } from "next/font/google";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import {Toaster} from "sonner";
-
+import { EdgeStoreProvider } from '../lib/edgestore';
 const inter = Inter({ subsets: ["latin"] });
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -49,15 +49,17 @@ export default function RootLayout({
     </head>
     <body className={inter.className}>
       <ConvexClientProvider>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <Toaster position="bottom-center" />
-        {children}
-      </ThemeProvider>
+        <EdgeStoreProvider>
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+          <Toaster position="bottom-center" />
+          {children}
+          </ThemeProvider>
+        </EdgeStoreProvider>
       </ConvexClientProvider>
     </body>
   </html>
