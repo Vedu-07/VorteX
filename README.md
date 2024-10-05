@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VORTEX 
 
-## Getting Started
+---
 
-First, run the development server:
+## VorteX is a Notion-inspired platform designed for storing and organizing personalized notes, helping users streamline their thoughts and workflows in a space tailored just for them.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+***## Key Features***
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  - Real-time database  🔗 
+  - Notion-style editor 📝 
+  - Light and Dark mode 🌓
+  - Infinite children documents 🌲
+  - Trash can & soft delete 🗑️
+  - Authentication 🔐 
+  - File upload
+  - File deletion
+  - File replacement
+  - Icons for each document (changes in real-time) 🌠
+  - Expandable sidebar ➡️🔀⬅️
+  - Full mobile responsiveness 📱
+  - Publish your note to the web 🌐
+  - Fully collapsable sidebar ↕️
+  - Landing page 🛬
+  - Cover image of each document 🖼️
+  - Recover deleted files 🔄📄
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+***## UI***
+  ## Landing Page
+  
+  ![Screenshot 2024-10-05 093600](https://github.com/user-attachments/assets/d83db707-65ac-4fe9-9689-f93bc8494bca)
 
-To learn more about Next.js, take a look at the following resources:
+  ## Editor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  ![Screenshot 2024-10-05 093832](https://github.com/user-attachments/assets/ee95a61b-d532-470a-a03d-684c29ecff92)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  ## Published Page Preview
 
-## Deploy on Vercel
+  ![Screenshot 2024-10-05 093920](https://github.com/user-attachments/assets/40a85112-a52e-40aa-afcf-0277a3ff1a8a)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Techstack: 
+ - Next.js - The React Framework
+ - Convex - Realtime Database
+ - Edgestore - For Handling File Uploads
+ - Clerk - For Authentication
+ - Shadcn Ui & Tailwind CSS For Styling
+
+
