@@ -2,11 +2,11 @@
 
 ---
 
-## VorteX is a Notion-inspired platform designed for storing and organizing personalized notes, helping users streamline their thoughts and workflows in a space tailored just for them.
+## ***VorteX is a Notion-inspired platform designed for storing and organizing personalized notes, helping users streamline their thoughts and workflows in a space tailored just for them.***
 
 ---
 
-***## Key Features***
+## Key Features
 
   - Real-time database  🔗 
   - Notion-style editor 📝 
@@ -28,7 +28,8 @@
 
 ---
 
-***## UI***
+## UI
+
   ## Landing Page
   
   ![Screenshot 2024-10-05 093600](https://github.com/user-attachments/assets/d83db707-65ac-4fe9-9689-f93bc8494bca)
