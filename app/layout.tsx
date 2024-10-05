@@ -7,16 +7,7 @@ import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import {Toaster} from "sonner";
 import { EdgeStoreProvider } from '../lib/edgestore';
 const inter = Inter({ subsets: ["latin"] });
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 
 export const metadata: Metadata = {
   title: "VorteX",
