@@ -12,7 +12,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 interface DocumentIdPageProps {
   params: {
-    // Document Od Comes Form Dynamic Route Folder Which We Have Created
+    // Document Id Comes Form Dynamic Route Folder Which We Have Created
     documentId: Id<"documents">;
   };
 };
